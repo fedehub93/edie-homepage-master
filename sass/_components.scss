@@ -1,0 +1,34 @@
+.input-group {
+    width: 100%;
+
+    &__label {
+        font-size: 1.4rem;
+        color: var(--color-gray-3);
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    &__email {
+        font-family: inherit;
+        width: 75%;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        border: none;
+        background-color: var(--color-gray-6);
+    }
+}
+
+.btn {
+    font-family: inherit;
+    font-size: 1.4rem;
+    padding: 1.8rem 3rem;
+    border: none;
+    border-radius: 1.5rem;
+    transform: translateX(-15px);
+    cursor: pointer;
+
+    &--blue {
+        background-color: var(--color-blue);
+        color: var(--color-white);
+    }
+}
