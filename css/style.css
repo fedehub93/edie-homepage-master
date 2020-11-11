@@ -30,9 +30,17 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 500; }
 
-h1,
-h2 {
+.heading-1,
+.heading-2 {
   font-size: 4.8rem;
+  color: var(--color-gray-1); }
+
+.heading-3 {
+  font-size: 3.6rem;
+  color: var(--color-gray-1); }
+
+.heading-4 {
+  font-size: 2.4rem;
   color: var(--color-gray-1); }
 
 .paragraph {
@@ -55,6 +63,12 @@ h2 {
 .u-mb-huge {
   margin-bottom: 8rem !important; }
 
+.u-justify-self-start {
+  justify-self: start; }
+
+.u-width-40 {
+  max-width: 40rem; }
+
 .input-group {
   width: 100%; }
   .input-group__label {
@@ -73,14 +87,46 @@ h2 {
 .btn {
   font-family: inherit;
   font-size: 1.4rem;
+  display: inline-block;
   padding: 1.8rem 3rem;
   border: none;
   border-radius: 1.5rem;
-  transform: translateX(-15px);
   cursor: pointer; }
+  .btn--input {
+    transform: translateX(-15px); }
+  .btn--small {
+    padding: 1rem 2rem; }
   .btn--blue {
     background-color: var(--color-blue);
     color: var(--color-white); }
+  .btn--gray {
+    background-color: var(--color-gray-5);
+    color: var(--color-gray-3); }
+
+.services {
+  display: flex;
+  padding: 0 1rem; }
+  .services__box {
+    padding: 5rem 3rem;
+    display: grid;
+    row-gap: 3rem; }
+    .services__box:not(:last-child) {
+      margin-right: 10rem; }
+    .services__box--active {
+      box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.1);
+      border-radius: 2rem; }
+  .services__icon {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    fill: var(--color-white); }
+    .services__icon--blue {
+      background-color: var(--color-blue); }
+    .services__icon--green {
+      background-color: var(--color-green); }
+    .services__icon--red {
+      background-color: var(--color-red); }
 
 .logo-text:link,
 .logo-text:visited {
@@ -109,8 +155,11 @@ h2 {
 .header {
   margin-bottom: 15rem; }
   .header__box {
-    margin-left: 20rem;
-    max-width: 60%; }
+    margin-left: 25rem;
+    max-width: 55rem; }
   .header__img {
     width: 100%;
     border-radius: 2.5rem; }
+
+.section-services {
+  padding: 0 16.5rem; }

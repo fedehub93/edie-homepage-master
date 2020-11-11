@@ -33,12 +33,16 @@
 .header {
   margin-bottom: 15rem;
   &__box {
-    margin-left: 20rem;
-    max-width: 60%;
+    margin-left: 25rem;
+    max-width: 55rem;
 }
 
   &__img {
     width: 100%;
     border-radius: 2.5rem;
   }
+}
+
+.section-services {
+  padding: 0 16.5rem
 }

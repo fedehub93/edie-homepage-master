@@ -21,14 +21,59 @@
 .btn {
     font-family: inherit;
     font-size: 1.4rem;
+    display: inline-block;
     padding: 1.8rem 3rem;
     border: none;
     border-radius: 1.5rem;
-    transform: translateX(-15px);
     cursor: pointer;
+
+    &--input {
+        transform: translateX(-15px);
+    }
+
+    &--small {
+        padding: 1rem 2rem;
+    }
 
     &--blue {
         background-color: var(--color-blue);
         color: var(--color-white);
+    }
+
+    &--gray {
+        background-color: var(--color-gray-5);
+        color: var(--color-gray-3);
+    }
+}
+
+//SERVICES
+
+.services {
+    display: flex;
+    padding: 0 1rem;
+
+    &__box {
+        &:not(:last-child) { margin-right: 10rem;}
+        padding: 5rem 3rem;
+
+        display: grid;
+        row-gap: 3rem;
+
+        &--active {
+            box-shadow: 0 1.5rem 3rem rgba(0,0,0, 0.10);
+            border-radius: 2rem;
+        }
+    }
+
+    &__icon {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        fill: var(--color-white);
+
+        &--blue { background-color: var(--color-blue); }
+        &--green { background-color: var(--color-green); }
+        &--red { background-color: var(--color-red); }
     }
 }
