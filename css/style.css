@@ -41,15 +41,28 @@ body {
 
 .heading-4 {
   font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-gray-1); }
+
+.heading-5 {
+  font-size: 2.4rem;
+  font-weight: 500;
   color: var(--color-gray-1); }
 
 .paragraph {
-  font-weight: 400;
-  font-size: 1.8rem; }
+  font-size: 1.8rem;
+  font-weight: 400; }
   .paragraph--blue {
     color: var(--color-blue); }
   .paragraph--gray {
     color: var(--color-gray-2); }
+
+.paragraph--xs {
+  font-size: 1.4rem;
+  font-weight: 300; }
+
+.u-mb-xsmall {
+  margin-bottom: 1rem !important; }
 
 .u-mb-small {
   margin-bottom: 3rem !important; }
@@ -102,6 +115,9 @@ body {
   .btn--gray {
     background-color: var(--color-gray-5);
     color: var(--color-gray-3); }
+  .btn--link {
+    font-size: 2.4rem;
+    color: var(--color-blue); }
 
 .services {
   display: flex;
@@ -127,6 +143,48 @@ body {
       background-color: var(--color-green); }
     .services__icon--red {
       background-color: var(--color-red); }
+
+.design {
+  margin-top: 20rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+  row-gap: 10rem; }
+  .design__box {
+    width: 100%; }
+    .design__box:nth-child(2n) {
+      transform: translateY(-20rem); }
+  .design__img {
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    margin-bottom: 1rem; }
+
+.teams {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(max-content, 40%) 60%; }
+  .teams__titles {
+    align-self: center; }
+  .teams__images {
+    width: 100%;
+    justify-self: right;
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr);
+    grid-template-rows: minmax(min-content, max-content);
+    gap: 2rem; }
+  .teams__img {
+    width: 100%;
+    border-radius: 2rem; }
+    .teams__img:first-child {
+      grid-row: 1 /3;
+      align-self: center; }
+  .teams__meet-team {
+    font-size: 1.8rem;
+    color: var(--color-red);
+    display: block;
+    margin-bottom: 1rem; }
 
 .logo-text:link,
 .logo-text:visited {
@@ -162,4 +220,15 @@ body {
     border-radius: 2.5rem; }
 
 .section-services {
-  padding: 0 16.5rem; }
+  margin: 0 16.5rem 20rem 16.5rem; }
+
+.section-design {
+  position: relative;
+  margin: 0 16.5rem 20rem 16.5rem; }
+  .section-design .btn--link {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
+
+.section-teams {
+  margin: 0 16.5rem 20rem 16.5rem; }

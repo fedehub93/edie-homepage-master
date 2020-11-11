@@ -44,5 +44,20 @@
 }
 
 .section-services {
-  padding: 0 16.5rem
+  margin: 0 16.5rem 20rem 16.5rem;
+}
+
+.section-design {
+  position: relative;
+  margin: 0 16.5rem 20rem 16.5rem;
+
+  .btn--link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.section-teams {
+  margin: 0 16.5rem 20rem 16.5rem;
 }
