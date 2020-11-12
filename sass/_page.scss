@@ -61,3 +61,35 @@
 .section-teams {
   margin: 0 16.5rem 20rem 16.5rem;
 }
+
+.section-testimonial {
+  margin: 0 16.5rem 20rem 16.5rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: -28.7rem;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-black);
+  padding: 5rem 16.5rem 15rem 16.5rem;
+
+  display: flex;
+
+  .input-group {
+    &__label {
+      color: var(--color-gray-6)
+    }
+  }
+
+  .paragraph--footer {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    color: #A9A9A9;
+    transform: translateX(-50%);
+  }
+}
