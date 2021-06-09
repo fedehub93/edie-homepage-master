@@ -28,9 +28,23 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+
+    @media only screen and (max-width: $media-screen-xlarge) {
+        font-size: 56.25%;
+    }
+
+    @media only screen and (max-width: $media-screen-large) {
+        font-size: 50%;
+    }
+    
+    @media only screen and (max-width: $media-screen-medium) {
+        font-size: 43.75%;
+    }
+
 }
 
 body {
     position: relative;
     padding: 2.5rem 5rem;
+    width: 100%;
 }

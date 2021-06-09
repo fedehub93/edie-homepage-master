@@ -15,11 +15,19 @@
   justify-content: space-evenly;
   align-items: center;
 
+  @media only screen and(max-width: $media-screen-medium) {
+    display: block;
+  }
+
   &__items {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media only screen and(max-width: $media-screen-medium) {
+      display: none;
+    }
   }
 
   &__links:link,
@@ -28,14 +36,157 @@
     color: var(--color-gray-1);
     text-decoration: none;
   }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 5rem;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+
+    z-index: 300;
+
+    @media only screen and(max-width: $media-screen-medium) {
+      display: block;
+    }
+  }
+
+  &__button-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 4rem;
+    background-color: var(--color-black);
+    z-index: 199;
+
+    transition: 0.4s all;
+
+    &::before,
+    &::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      height: 2px;
+      width: 4rem;
+      background-color: var(--color-black);
+    }
+
+    &::before {
+      transform: translateY(-1rem);
+      transition: 0.4s all;
+    }
+
+    &::after {
+      transform: translateY(1rem);
+      transition: 0.4s all;
+    }
+  }
+
+  &__checkbox:checked + &__button {
+    position: fixed;
+  }
+
+  &__checkbox:checked + &__button &__button-icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__button-icon::before {
+    transform: rotate(130deg);
+  }
+
+  &__checkbox:checked + &__button &__button-icon::after {
+    transform: rotate(230deg);
+  }
+
+  &__checkbox:checked ~ &__mobile {
+    opacity: 1;
+  }
+
+  &__mobile {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    background-color: var(--color-gray-5);
+    z-index: 200;
+    opacity: 0;
+
+    transition: .4s opacity;
+  }
+
+  &__mobile-list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style-type: none;
+    text-align: center;
+  }
+
+  &__mobile-item {
+    &:not(:last-child) { margin-bottom: 5rem;}
+    
+    font-size: 3rem;
+    font-weight: 400;
+
+    transition: .4s all;
+  }
+  
+  &__mobile-link {
+    position: relative;
+    color: var(--color-black);
+    text-decoration: none;
+
+    transition: .4s all;
+
+    &::after {
+      content: ' ';
+      display: block;
+      background-color: var(--color-gray-1);
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      height: 3px;
+      width: 0;
+
+      transition: all .5s cubic-bezier(1,0,.61,.88) .2s;
+    }
+  }
+  
+  &__mobile-list:hover &__mobile-item:not(:hover)  {
+    opacity: .5;
+  }
+
+  &__mobile-item:hover  {
+    transform: translateY(-5px);
+  }
+
+  &__mobile-item:hover > &__mobile-link::after {
+    width: 100%;
+  }
 }
 
 .header {
   margin-bottom: 15rem;
+
   &__box {
     margin-left: 25rem;
     max-width: 55rem;
-}
+
+    @media only screen and(max-width: $media-screen-medium) {
+      margin-left: 5rem;
+    }
+  }
 
   &__img {
     width: 100%;
@@ -43,13 +194,19 @@
   }
 }
 
-.section-services {
+.section {
   margin: 0 16.5rem 20rem 16.5rem;
+
+  @media only screen and (max-width: $media-screen-medium) {
+    margin: 0 5rem 10rem 5rem;
+  }
+}
+
+.section-services {
 }
 
 .section-design {
   position: relative;
-  margin: 0 16.5rem 20rem 16.5rem;
 
   .btn--link {
     position: absolute;
@@ -59,11 +216,10 @@
 }
 
 .section-teams {
-  margin: 0 16.5rem 20rem 16.5rem;
 }
 
 .section-testimonial {
-  margin: 0 16.5rem 20rem 16.5rem;
+  margin-bottom: 35rem;
 }
 
 .footer {
@@ -72,13 +228,22 @@
   left: 0;
   width: 100%;
   background-color: var(--color-black);
-  padding: 5rem 16.5rem 15rem 16.5rem;
+  padding: 5rem 10rem 15rem 20rem;
 
   display: flex;
 
+  @media only screen and (max-width: $media-screen-medium) {
+    flex-direction: column;
+    padding: 5rem 10rem;
+  }
+
   .input-group {
     &__label {
-      color: var(--color-gray-6)
+      color: var(--color-gray-6);
+    }
+
+    .btn--input {
+      transform: translateX(-9.4rem);
     }
   }
 
@@ -89,7 +254,11 @@
     position: absolute;
     bottom: 2rem;
     left: 50%;
-    color: #A9A9A9;
+    color: #a9a9a9;
     transform: translateX(-50%);
+
+    @media only screen and (max-width: $media-screen-medium) {
+      bottom: 1rem;
+    }
   }
 }

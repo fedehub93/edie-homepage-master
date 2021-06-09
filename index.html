@@ -15,16 +15,42 @@
     <title>Edie homepage</title>
   </head>
   <body>
-    <nav class="nav">
+    <div class="nav">
       <a href="#" class="logo-text">Edie</a>
-      <div class="nav__items">
+      <nav class="nav__items">
         <a href="#" class="nav__links">Home</a>
         <a href="#" class="nav__links">Services</a>
         <a href="#" class="nav__links">Our Works</a>
         <a href="#" class="nav__links">Clients</a>
         <a href="#" class="nav__links">Contact</a>
+      </nav>
+      <input type="checkbox" class="nav__checkbox" id="navi-toggle">
+      <label for="navi-toggle" class="nav__button">
+        <span class="nav__button-icon"></span>
+      </label>
+      <div class="nav__mobile">
+        <nav class="nav__mobile-nav">
+          <ul class="nav__mobile-list">
+            <li class="nav__mobile-item">
+              <a href="#" class="nav__mobile-link">Home</a>
+            </li>
+            <li class="nav__mobile-item">
+              <a href="#" class="nav__mobile-link">Services</a>
+            </li>
+            <li class="nav__mobile-item">
+              <a href="#" class="nav__mobile-link">Our Works</a>
+            </li>
+            <li class="nav__mobile-item">
+              <a href="#" class="nav__mobile-link">Clients</a>
+            </li>
+            <li class="nav__mobile-item">
+              <a href="#" class="nav__mobile-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="nav__mobile-background">&nbsp;</div>
       </div>
-    </nav>
+    </div>
     <header class="header">
       <div class="header__box u-mb-medium">
         <p class="paragraph paragraph--blue">Unhappy with your website?</p>
@@ -49,7 +75,7 @@
         </div>
       </div>
     </header>
-    <section class="section-services">
+    <section class="section section-services">
       <h3 class="heading-3 u-mb-big u-width-40">
         We offer high demand services
       </h3>
@@ -116,7 +142,7 @@
         </div>
       </div>
     </section>
-    <section class="section-design">
+    <section class="section section-design">
       <h3 class="heading-3 u-width-40">Good design means good business</h3>
       <div class="design">
         <div class="design__box">
@@ -150,7 +176,7 @@
       </div>
       <div class="btn btn--link">see more &rarr;</div>
     </section>
-    <section class="section-teams">
+    <section class="section section-teams">
       <div class="teams">
         <div class="teams__titles">
           <span class="teams__meet-team">Meet the team</span>
@@ -173,7 +199,7 @@
         </div>
       </div>
     </section>
-    <section class="section-testimonial">
+    <section class="section section-testimonial">
       <div class="testimonial">
         <q class="testimonial__quote"
           >Fast and outstanding resutls. Edie understands their customer’s
