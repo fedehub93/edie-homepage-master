@@ -18,13 +18,13 @@
     <div class="nav">
       <a href="#" class="logo-text">Edie</a>
       <nav class="nav__items">
-        <a href="#" class="nav__links">Home</a>
-        <a href="#" class="nav__links">Services</a>
-        <a href="#" class="nav__links">Our Works</a>
-        <a href="#" class="nav__links">Clients</a>
-        <a href="#" class="nav__links">Contact</a>
+        <a class="nav__links">Home</a>
+        <a class="nav__links" data-section="section-services">Services</a>
+        <a class="nav__links" data-section="section-design">Our Works</a>
+        <a class="nav__links" data-section="section-testimonial">Clients</a>
+        <a class="nav__links" data-section="section-contact">Contact</a>
       </nav>
-      <input type="checkbox" class="nav__checkbox" id="navi-toggle">
+      <input type="checkbox" class="nav__checkbox" id="navi-toggle" />
       <label for="navi-toggle" class="nav__button">
         <span class="nav__button-icon"></span>
       </label>
@@ -32,23 +32,30 @@
         <nav class="nav__mobile-nav">
           <ul class="nav__mobile-list">
             <li class="nav__mobile-item">
-              <a href="#" class="nav__mobile-link">Home</a>
+              <a class="nav__mobile-link">Home</a>
             </li>
             <li class="nav__mobile-item">
-              <a href="#" class="nav__mobile-link">Services</a>
+              <a class="nav__mobile-link" data-section="section-services"
+                >Services</a
+              >
             </li>
             <li class="nav__mobile-item">
-              <a href="#" class="nav__mobile-link">Our Works</a>
+              <a class="nav__mobile-link" data-section="section-design"
+                >Our Works</a
+              >
             </li>
             <li class="nav__mobile-item">
-              <a href="#" class="nav__mobile-link">Clients</a>
+              <a class="nav__mobile-link" data-section="section-testimonial"
+                >Clients</a
+              >
             </li>
             <li class="nav__mobile-item">
-              <a href="#" class="nav__mobile-link">Contact</a>
+              <a class="nav__mobile-link" data-section="section-contact"
+                >Contact</a
+              >
             </li>
           </ul>
         </nav>
-        <div class="nav__mobile-background">&nbsp;</div>
       </div>
     </div>
     <header class="header">
@@ -75,7 +82,7 @@
         </div>
       </div>
     </header>
-    <section class="section section-services">
+    <section id="section-services" class="section section-services">
       <h3 class="heading-3 u-mb-big u-width-40">
         We offer high demand services
       </h3>
@@ -142,7 +149,7 @@
         </div>
       </div>
     </section>
-    <section class="section section-design">
+    <section id="section-design" class="section section-design">
       <h3 class="heading-3 u-width-40">Good design means good business</h3>
       <div class="design">
         <div class="design__box">
@@ -176,7 +183,7 @@
       </div>
       <div class="btn btn--link">see more &rarr;</div>
     </section>
-    <section class="section section-teams">
+    <section id="section-teams" class="section section-teams">
       <div class="teams">
         <div class="teams__titles">
           <span class="teams__meet-team">Meet the team</span>
@@ -199,7 +206,7 @@
         </div>
       </div>
     </section>
-    <section class="section section-testimonial">
+    <section id="section-testimonial" class="section section-testimonial">
       <div class="testimonial">
         <q class="testimonial__quote"
           >Fast and outstanding resutls. Edie understands their customer’s
@@ -216,7 +223,7 @@
         </div>
       </div>
     </section>
-    <footer class="footer">
+    <footer id="section-contact" class="footer">
       <nav class="navigation">
         <a href="#" class="navigation__link">Home</a>
         <a href="#" class="navigation__link">Services</a>
@@ -286,4 +293,5 @@
       <p class="paragraph paragraph--footer">Federico @ DevChallenges.io</p>
     </footer>
   </body>
+  <script src="js/script.js"></script>
 </html>
