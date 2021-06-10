@@ -108,21 +108,45 @@
   }
 
   &__checkbox:checked ~ &__mobile {
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 200%;
+    height: 200%;
     opacity: 1;
-    z-index: 200;
+
+    transition: right 0.4s cubic-bezier(1, 0, 0.61, 0.88),
+      top 0.4s cubic-bezier(1, 0, 0.61, 0.88),
+      transform 0.4s cubic-bezier(1, 0, 0.61, 0.88),
+      opacity 0.4s cubic-bezier(1, 0, 0.61, 0.88),
+      width 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s,
+      height 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s;
+  }
+
+  &__checkbox:checked ~ &__mobile &__mobile-list {
+    opacity: 0.99;
+
+    transition: opacity 0.4s 1s;
   }
 
   &__mobile {
     position: fixed;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
+    height: 4rem;
+    width: 4rem;
+    top: 4rem;
+    right: 5rem;
+    border-radius: 50%;
     background-color: var(--color-gray-5);
-    z-index: -1000;
+    z-index: 200;
+    overflow: hidden;
     opacity: 0;
 
-    transition: 0.4s opacity;
+    transition: right 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s,
+      top 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s,
+      transform 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s,
+      opacity 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s,
+      width 0.4s cubic-bezier(1, 0, 0.61, 0.88),
+      height 0.4s cubic-bezier(1, 0, 0.61, 0.88);
   }
 
   &__mobile-list {
@@ -132,6 +156,11 @@
     transform: translate(-50%, -50%);
     list-style-type: none;
     text-align: center;
+    z-index: 300;
+    backface-visibility: hidden; // REMOVE GLITCH - SHIFT 1px
+    opacity: 0;
+
+    transition: opacity 0.2s;
   }
 
   &__mobile-item {
@@ -141,10 +170,10 @@
 
     font-size: 3rem;
     font-weight: 400;
-
-    transition: 0.4s all;
+    
+    transition: all .5s;
   }
-
+  
   &__mobile-link {
     position: relative;
     color: var(--color-black);
@@ -167,7 +196,7 @@
     }
   }
 
-  &__mobile-list:hover &__mobile-item:not(:hover) {
+  &__mobile-list:hover > &__mobile-item:not(:hover) {
     opacity: 0.5;
   }
 
@@ -182,6 +211,10 @@
 
 .header {
   margin-bottom: 15rem;
+
+  @media only screen and(max-width: $media-screen-medium) {
+    margin-bottom: 10rem;
+  }
 
   &__box {
     margin-left: 25rem;
@@ -202,7 +235,7 @@
   margin: 0 16.5rem 20rem 16.5rem;
 
   @media only screen and (max-width: $media-screen-medium) {
-    margin: 0 5rem 10rem 5rem;
+    margin: 0;
   }
 }
 
@@ -232,7 +265,7 @@
 
   @media only screen and (max-width: $media-screen-medium) {
     flex-direction: column;
-    padding: 5rem 10rem;
+    padding: 5rem 5rem;
   }
 
   .input-group {

@@ -83,6 +83,9 @@ body {
 
 .u-mb-big {
   margin-bottom: 6rem !important; }
+  @media only screen and (max-width: 37.5em) {
+    .u-mb-big {
+      margin-bottom: 3rem !important; } }
 
 .u-mb-huge {
   margin-bottom: 8rem !important; }
@@ -181,6 +184,9 @@ body {
     @media only screen and (min-width: 56.25em) {
       .design__box:nth-child(2n) {
         transform: translateY(-20rem); } }
+    @media only screen and (max-width: 37.5em) {
+      .design__box:last-child {
+        margin-bottom: 7.5rem; } }
   .design__img {
     width: 100%;
     height: auto;
@@ -192,6 +198,9 @@ body {
   display: grid;
   grid-template-columns: minmax(max-content, 40%) 60%;
   column-gap: 2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .teams {
+      grid-template-columns: 1fr; } }
   .teams__titles {
     align-self: center; }
   .teams__images {
@@ -366,29 +375,43 @@ body {
   .nav__checkbox:checked + .nav__button .nav__button-icon::after {
     transform: rotate(230deg); }
   .nav__checkbox:checked ~ .nav__mobile {
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 200%;
+    height: 200%;
     opacity: 1;
-    z-index: 200; }
+    transition: right 0.4s cubic-bezier(1, 0, 0.61, 0.88), top 0.4s cubic-bezier(1, 0, 0.61, 0.88), transform 0.4s cubic-bezier(1, 0, 0.61, 0.88), opacity 0.4s cubic-bezier(1, 0, 0.61, 0.88), width 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s, height 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s; }
+  .nav__checkbox:checked ~ .nav__mobile .nav__mobile-list {
+    opacity: 0.99;
+    transition: opacity 0.4s 1s; }
   .nav__mobile {
     position: fixed;
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    top: 0;
+    height: 4rem;
+    width: 4rem;
+    top: 4rem;
+    right: 5rem;
+    border-radius: 50%;
     background-color: var(--color-gray-5);
-    z-index: -1000;
+    z-index: 200;
+    overflow: hidden;
     opacity: 0;
-    transition: 0.4s opacity; }
+    transition: right 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s, top 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s, transform 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s, opacity 0.4s cubic-bezier(1, 0, 0.61, 0.88) 0.4s, width 0.4s cubic-bezier(1, 0, 0.61, 0.88), height 0.4s cubic-bezier(1, 0, 0.61, 0.88); }
   .nav__mobile-list {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     list-style-type: none;
-    text-align: center; }
+    text-align: center;
+    z-index: 300;
+    backface-visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s; }
   .nav__mobile-item {
     font-size: 3rem;
     font-weight: 400;
-    transition: 0.4s all; }
+    transition: all .5s; }
     .nav__mobile-item:not(:last-child) {
       margin-bottom: 5rem; }
   .nav__mobile-link {
@@ -407,7 +430,7 @@ body {
       height: 3px;
       width: 0;
       transition: all 0.5s cubic-bezier(1, 0, 0.61, 0.88) 0.2s; }
-  .nav__mobile-list:hover .nav__mobile-item:not(:hover) {
+  .nav__mobile-list:hover > .nav__mobile-item:not(:hover) {
     opacity: 0.5; }
   .nav__mobile-item:hover {
     transform: translateY(-5px); }
@@ -416,6 +439,9 @@ body {
 
 .header {
   margin-bottom: 15rem; }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      margin-bottom: 10rem; } }
   .header__box {
     margin-left: 25rem;
     max-width: 55rem; }
@@ -430,7 +456,7 @@ body {
   margin: 0 16.5rem 20rem 16.5rem; }
   @media only screen and (max-width: 56.25em) {
     .section {
-      margin: 0 5rem 10rem 5rem; } }
+      margin: 0; } }
 
 .section-design {
   position: relative; }
@@ -453,7 +479,7 @@ body {
   @media only screen and (max-width: 56.25em) {
     .footer {
       flex-direction: column;
-      padding: 5rem 10rem; } }
+      padding: 5rem 5rem; } }
   .footer .input-group__label {
     color: var(--color-gray-6); }
   .footer .input-group .btn--input {

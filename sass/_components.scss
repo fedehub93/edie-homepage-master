@@ -126,6 +126,12 @@
         transform: translateY(-20rem);
       }
     }
+
+    &:last-child {
+      @media only screen and (max-width: $media-screen-small) {
+        margin-bottom: 7.5rem;
+      }
+    }
     width: 100%;
   }
 
@@ -144,9 +150,14 @@
   display: grid;
   grid-template-columns: minmax(max-content, 40%) max(60%);
   column-gap: 2rem;
-
+  
+  @media only screen and(max-width: $media-screen-small) {
+    grid-template-columns: 1fr;
+  }
+  
   &__titles {
     align-self: center;
+
   }
 
   &__images {
