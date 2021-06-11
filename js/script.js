@@ -1,6 +1,8 @@
-const arrBtnNav = document.querySelectorAll(".nav__links");
-const arrBtnMobileNav = document.querySelectorAll(".nav__mobile-link");
-const arrBtnFooterNav = document.querySelectorAll(".navigation__link");
+
+// ELEMENTS
+
+const navEl = document.querySelector(".nav");
+const navigationEl = document.querySelector(".navigation");
 
 // FUNCTIONS
 
@@ -10,14 +12,23 @@ const goToSection = function (sectionId, mobile = 0) {
   section.scrollIntoView({ behavior: "smooth" });
 };
 
-// EVENT LISTENERS
+// EVENT LISTENER
 
-arrBtnNav.forEach((btn) =>
-  btn.addEventListener("click", (e) => goToSection(e.target.dataset.section))
-);
-arrBtnMobileNav.forEach((btn) =>
-  btn.addEventListener("click", (e) => goToSection(e.target.dataset.section, 1))
-);
-arrBtnFooterNav.forEach((btn) =>
-  btn.addEventListener("click", (e) => goToSection(e.target.dataset.section))
-);
+navEl.addEventListener("click", (e) => {
+  if (e.target.classList.contains("nav__links")) {
+    e.preventDefault();
+    return goToSection(e.target.dataset.section);
+  }
+
+  if (e.target.classList.contains("nav__mobile-link")) {
+    e.preventDefault();
+    return goToSection(e.target.dataset.section, 1);
+  }
+});
+
+navigationEl.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("navigation__link")) {
+    return goToSection(e.target.dataset.section);
+  }
+})
