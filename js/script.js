@@ -1,5 +1,6 @@
 const arrBtnNav = document.querySelectorAll(".nav__links");
 const arrBtnMobileNav = document.querySelectorAll(".nav__mobile-link");
+const arrBtnFooterNav = document.querySelectorAll(".navigation__link");
 
 // FUNCTIONS
 
@@ -16,4 +17,7 @@ arrBtnNav.forEach((btn) =>
 );
 arrBtnMobileNav.forEach((btn) =>
   btn.addEventListener("click", (e) => goToSection(e.target.dataset.section, 1))
+);
+arrBtnFooterNav.forEach((btn) =>
+  btn.addEventListener("click", (e) => goToSection(e.target.dataset.section))
 );
